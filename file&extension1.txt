@@ -1,0 +1,15 @@
+n=int(input())
+ls=[]
+for i in range(n):
+    x=input()
+    y=x[x.rfind('.'):]
+    ls.append(y)
+d=sorted(set(ls),key=ls.index)
+a=[]
+out = [0]*len(d)
+for i in range(len(d)):
+    for j in range(len(ls)):
+        if(ls[i]==ls[j]):
+            out[i]+=1           
+for i in range(len(out)):
+    print(out[i],d[i])
