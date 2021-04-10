@@ -1,0 +1,11 @@
+mat=[list(map(str,input().split())) for _ in range(5)]
+s=input()
+for x in s:
+    for i in range(5):
+        for j in range(5):
+            if len(mat[i][j])==1 and x==mat[i][j]:
+                print(i+1,j+1,end="",sep="")
+            elif len(mat[i][j])>1 and x in mat[i][j]:
+                print(i+1,j+1,end="",sep="")
+    if x==' ':
+        print(end=" ")
