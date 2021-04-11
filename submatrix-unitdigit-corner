@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c,i,j,d,k,l,sr,sc;
+    scanf("%d %d",&r,&c);
+    int mat[r][c];
+    for(i=0;i<r;i++)
+    for(j=0;j<c;j++)
+    scanf("%d ",&mat[i][j]);
+    scanf("%d",&d);
+    int f=0,ms=-1;
+    for(i=0;i<r-2;i++)
+    {
+        for(j=0;j<c-2;j++)
+        {
+            if((mat[i+2][j+2])%10==d)
+            {
+                f=1;
+                int sum=0;
+                for(k=i;k<i+3;k++)
+                {
+                    for(l=j;l<j+3;l++)
+                    {
+                        sum+=mat[k][l];
+                    }
+                }
+                if(sum>ms)
+                {
+                    ms=sum;
+                    sr=i,sc=j;
+                }
+            }
+        }
+    }
+    if(f==1)
+    {
+        for(i=sr;i<sr+3;i++)
+        {
+            for(j=sc;j<sc+3;j++)
+            {
+                printf("%d ",mat[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    else
+    {
+        printf("-1");
+    }
+}
