@@ -1,0 +1,10 @@
+n=int(input())
+mat=[list(map(int,input().split())) for _ in range(n)]
+mat1=zip(*mat)
+mat1=[list(i) for i in mat1]
+for i in range(n):
+    for j in range(n):
+        if mat[i]==mat1[j] or mat[i][::-1]==mat1[j] or mat[i][::-1]==mat1[j][::-1]:
+            print("YES")
+            exit()
+print("NO")
