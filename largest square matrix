@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char str[1001][1001];
+    int i,j,k,max=0;
+    int hash[1001]={0};
+    while(scanf("%s",&str[i])==1)
+    {
+        int l=strlen(str[i]);
+        hash[l]++;
+        if(l>max) max=l;
+        i++;
+    }
+    for(j=max;j>=1;j--)
+    {
+        if(hash[j]>=j)
+        {
+            int f=0;
+            for(k=0;k<i;k++)
+            {
+                if(strlen(str[k])==j)
+                {
+                    f++;
+                    for(int ind=0;ind<strlen(str[k]);ind++)
+                    {
+                        printf("%c ",str[k][ind]);
+                    }
+                    printf("\n");
+                    if(f==j)
+                    break;
+                }
+            }
+            return 0;
+        }
+    }
+    printf("-1");
+}
