@@ -1,0 +1,14 @@
+r,c=map(int,input().split())
+mat1=[list(map(int,input().split())) for _ in range(r)]
+mat2=[list(map(int,input().split())) for _ in range(r)]
+for i in range(r):
+    for j in range(c):
+        mat1[i][j]=min(mat1[i])
+mat2=zip(*mat2)
+mat2=[list(i) for i in mat2]
+for i in range(r):
+    for j in range(c):
+        if mat1[i][j]>min(mat2[j]):
+            mat1[i][j]=min(mat2[j])
+for i in mat1:
+    print(*i)
