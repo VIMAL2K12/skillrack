@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,i,j,t;
+    scanf("%d ",&n);
+    char colors[n];
+    int max[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%c ",&colors[i]);
+    }
+    for(i=0;i<n;i++){
+        scanf("%d ",&max[i]);
+    }
+    scanf("%d",&t);
+    int c1=0,c2=0,c3=0;
+    for(i=1;i<=t;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(colors[j]=='R' && max[j]!=0)
+            {
+                max[j]-=1;
+                c1+=1;
+            }
+            if(colors[j]=='G' && i%2==0 && max[j]!=0)
+            {
+                max[j]-=1;
+                c2+=1;
+            }
+            if(colors[j]=='B' && i%3==0 && max[j]!=0)
+            {
+                max[j]-=1;
+                c3+=1;
+            }
+        }
+    }
+    printf("%d %d %d",c1,c2,c3);
+}
