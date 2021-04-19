@@ -1,0 +1,18 @@
+n=int(input())
+l=[]
+h=[0 for i in range(256)]
+for i in range(n):
+    s=input().strip()
+    h1=[0 for i in range(256)]
+    for j in s:
+	a=ord(j)
+        h1[a]+=1
+        if h1[a]==1:
+            h[a]+=1
+    l.append(s)
+f=[]
+for i in l:
+    for j in i:
+        if h[ord(j)]!=n and j not in f:
+            print(j,end="")
+            f.append(j)
