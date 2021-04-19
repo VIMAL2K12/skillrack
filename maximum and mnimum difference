@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int s=9,l=0,a;
+    while(n>0)
+    {
+        a=n%10;
+        if(s>a)
+            s=a;
+        if(l<a)
+            l=a;
+        n/=10;
+    }
+    printf("%d",l-s);
+}
