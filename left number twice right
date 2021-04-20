@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int i=0,arr[51],c=0;
+    while(scanf("%d ",&arr[i])==1)
+    {
+        i++;
+    }
+    int n=i;
+    for(i=1;i<n-1;i++)
+    {
+        if(arr[i-1]==2*arr[i+1])
+        c+=1;
+    }
+    printf("%d",c);
+}
