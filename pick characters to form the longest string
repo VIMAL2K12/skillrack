@@ -1,0 +1,32 @@
+n=int(input())
+s=""
+for _ in range(n):
+    a=input()
+    s+=a
+l=[]
+b="".join(sorted(s))
+while b!="":
+    s=[b[0],b.count(b[0])]
+    l.append(s)
+    b=b.replace(b[0],"")
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        if l[i][1]<l[j][1]:
+            l[i],l[j]=l[j],l[i]
+s1,s2="",""
+for i in l:
+    n=i[1]//2
+    if i[1]%2!=0:
+        if s2=="":
+            s2+=i[0]
+        elif i[0]<s2:
+            s2=i[0]
+    if n>0:
+        s1+=i[0]*n
+    else:
+        if s2=="":
+            s2+=i[0]
+        elif i[0]<s2:
+            s2=i[0]
+s1="".join(sorted(s1))
+print(s1+s2+s1[::-1])
