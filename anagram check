@@ -1,0 +1,8 @@
+s1=input().split()
+s2=input().split()
+c=0
+for i in s1:
+    for j in s2:
+        if sorted(i)==sorted(j):
+            c+=1
+print(c)
