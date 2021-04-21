@@ -1,0 +1,6 @@
+n,l=int(input()),[]
+while n!=0:
+    l.append(n%10)
+    n//=10
+l1=sorted(sorted(l),key=l.count,reverse=True)
+print("".join(str(i) for i in l1))
