@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char s[51];
+    scanf("%s",s);
+    int i,n;
+    scanf("%d",&n);
+    for(i=1;i<=strlen(s);i++)
+    {
+        if(i%n==0)
+        {
+            printf("%c",s[i-1]);
+        }
+    }
+}
