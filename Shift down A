@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c,i,j;
+    scanf("%d %d",&r,&c);
+    char mat[r][c];
+    int h[c];
+    for(i=0;i<c;i++)
+    h[i]=0;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf(" %c",&mat[i][j]);
+            if(mat[i][j]=='A') h[j]++;
+        }
+    }
+    for(i=0;i<r;i++,printf("\n"))
+    {
+        for(j=0;j<c;j++)
+        {
+            if(r-i<=h[j])
+            printf("A ");
+            else
+            printf("- ");
+        }
+    }
+}
