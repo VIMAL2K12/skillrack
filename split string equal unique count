@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+char s[1001];
+int count(int i1,int i2)
+{
+    int i,hash[128]={0},c=0;
+    for(i=i1;i<i2;i++)
+    hash[s[i]]++;
+    for(i=65;i<128;i++)
+    {
+        if(hash[i]>0)
+        c++;
+    }
+    return c;
+}
+
+int main()
+{
+    scanf("%s",s);
+    int i,u1,u2,c=0;
+    for(i=0;i<strlen(s)-1;i++)
+    {
+        u1=count(0,i+1);
+        u2=count(i+1,strlen(s));
+        if(u1==u2)
+        {
+            c++;
+        }
+    }
+    printf("%d",c);
+}
