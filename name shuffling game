@@ -1,0 +1,10 @@
+n=int(input())
+l1,l2=[],[]
+for i in range(n):
+    s=input().split()
+    l1.append(s[0])
+    l2.append(s[1])
+l1.sort(key=lambda l1:l1[0])
+l2.sort(key=lambda l2:l2[-1])
+for i in range(n):
+    print(l1[i],l2[i])
