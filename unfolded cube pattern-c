@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    char ch[6];
+    int i,j,k,row,col,n,r,c;
+    for(i=0;i<6;i++)
+    scanf("%c ",&ch[i]);
+    scanf("%d",&n);
+    r=n*3,c=n*4;
+    char mat[r][c];
+    for(i=0;i<r;i++)
+    for(j=0;j<c;j++)
+    mat[i][j]='*';
+    for(i=0;i<6;i++)
+    {
+        if(i==0) row=n,col=n;
+        if(i==1) row=n,col=n*2;
+        if(i==2) row=n,col=n*3;
+        if(i==3) row=n,col=0;
+        if(i==4) row=n*2,col=n;
+        if(i==5) row=0,col=n;
+        for(j=row;j<row+n;j++)
+        {
+            for(k=col;k<col+n;k++)
+            {
+                mat[j][k]=ch[i];
+            }
+        }
+    }
+    for(i=0;i<r;i++,printf("\n"))
+    for(j=0;j<c;j++)
+    printf("%c ",mat[i][j]);
+}
