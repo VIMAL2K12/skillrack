@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    char ch[6],temp;
+    int i=0,n,m=1,k,l,j,indicate=1;
+    for(i=0;i<6;i++)
+    scanf("%c ",&ch[i]);
+    scanf("%d",&n);
+    int r=n*3,c=n*4;
+    char cube[r][c];
+    for(i=0;i<=r-n;i+=n)
+    {
+        for(j=0;j<=c-n;j+=n)
+        {
+            temp='*';
+            if(indicate==2) temp=ch[5];
+            if(indicate==5) temp=ch[3];
+            if(indicate==6) temp=ch[0];
+            if(indicate==7) temp=ch[1];
+            if(indicate==8) temp=ch[2];
+            if(indicate==10) temp=ch[4];
+            for(k=i;k<i+n;k++) 
+            {
+                for(l=j;l<j+n;l++)
+                {
+                    cube[k][l]=temp;
+                }
+            }
+            indicate+=1;
+        }
+    }
+    for(i=0;i<r;i++,printf("\n"))
+    for(j=0;j<c;j++)
+    printf("%c ",cube[i][j]);
+}
