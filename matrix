@@ -1,0 +1,26 @@
+r,c=map(int,input().split())
+mat=[list(map(str,input().split())) for _ in range(r)]
+mat1=[]
+for i in mat:
+    l=[]
+    for j in i:
+        s,s1="",""
+        for k in j:
+            if k.isdigit():
+                s+=k
+            else:
+                s1+=k
+        a=int(s)
+        l.append([s1,a])
+    mat1.append(l)
+mat=zip(*mat1)
+mat=[list(i) for i in mat]
+for i in mat:
+    i.sort()
+mat=zip(*mat)
+mat=[list(i) for i in mat]
+for i in range(r):
+    s=0
+    for j in range(c):
+	s+=mat[i][j][1]
+    print(s)
