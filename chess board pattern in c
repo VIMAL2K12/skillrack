@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c,i,j,i1,j1,nr,nc,f,k=0;
+    scanf("%d %d",&r,&c);
+    nr=r*c,nc=r*c;
+    int mat[nr][nc];
+    for(i=0;i<nr;i+=r)
+    {
+        f=(k%2==0)?0:1; 
+        for(j=0;j<nc;j+=r)
+        {
+            for(i1=i;i1<i+r;i1++)
+            for(j1=j;j1<j+r;j1++)
+            mat[i1][j1]=f;
+            f=!f;
+        }
+        k+=1;
+    }
+    for(i=0;i<nr;i++,printf("\n"))
+    for(j=0;j<nc;j++)
+    printf("%d ",mat[i][j]);
+}
