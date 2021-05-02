@@ -1,0 +1,19 @@
+r,c=map(int,input().split())
+mat=[list(map(str,input().split())) for _ in range(r)]
+search=input().strip()
+rsearch=search[::-1]
+top,bottom="".join(mat[0]),"".join(mat[-1])
+right,left="",""
+for i in range(r):
+    right+=mat[i][-1]
+    left+=mat[i][0]
+if search in top or rsearch in top:
+    print("Top")
+elif search in right or rsearch in right:
+    print("Right")
+elif search in bottom or rsearch in bottom:
+    print("Bottom")
+elif search in left or rsearch in left:
+    print("Left")
+else:
+    print("-1")
