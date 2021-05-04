@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,i=0,j,s,e,l,m1=101,m2=101,f=0;
+    scanf("%d\n",&n);
+    char str[n][101];
+    while(i<n)
+    {
+        scanf("%s ",&str[i]);
+        l=strlen(str[i]);
+        if(l<m1)
+        m1=l;
+        i++;
+    }
+    s=0,e=m1;
+    for(;;)
+    {
+        m2=101;
+        for(i=0;i<n;i++)
+        {
+            f=0;
+            for(j=s;j<e;j++)
+            {
+                if(j<strlen(str[i]))
+                {
+                    printf("%c",str[i][j]);
+                    f=1;
+                }
+                else
+                break;
+            }
+            if(f==1)
+            printf("\n");
+        }
+        for(i=0;i<n;i++)
+        {
+            l=strlen(str[i])-m1;
+            if(l<m2 && l>0)
+            m2=l;
+        }
+        if(m2==101) break;
+        m1+=m2;
+        s=e;
+        e=m1;
+    }
+}
