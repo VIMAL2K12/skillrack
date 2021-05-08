@@ -1,0 +1,24 @@
+#include<stdlib.h>
+int main()
+{
+    char s1[100],s2[100];
+    scanf("%s\n%s",s1,s2);
+    int l1=strlen(s1),s,e,i,j;
+    s=0,e=l1;
+    while(s<e)
+    {
+        char sub[101];
+        j=0;
+        for(i=s;i<e;i++)
+        sub[j++]=s1[i];
+        sub[j]='\0';
+        if(strstr(s2,sub)!=NULL)
+        {
+            printf("%s",sub);
+            return;
+        }
+        s++;
+        e--;
+    }
+    printf("-1");
+}
