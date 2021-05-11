@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int n,i,j;
+    scanf("%d ",&n);
+    char mat[n][n];
+    for(i=0;i<n;i++)for(j=0;j<n;j++)scanf(" %c",&mat[i][j]);
+    i=0,j=n-1;
+    while(i<n/2+n%2)
+    {
+        char t=mat[i][i];
+        mat[i][i]=mat[i][j],mat[i][j]=mat[j][j],mat[j][j]=mat[j][i],mat[j][i]=t;
+        i++,j--;
+    }
+    for(i=0;i<n;i++,printf("\n"))for(j=0;j<n;j++)printf("%c ",mat[i][j]);
+}
