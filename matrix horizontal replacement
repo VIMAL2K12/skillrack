@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c,i,j,nr,nc,k;
+    scanf("%d %d",&r,&c);
+    char string[r*c],mat[r][c];
+    for(i=0;i<r;i++)for(j=0;j<c;j++)scanf(" %c",&mat[i][j]);
+    scanf("%s",string);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(mat[i][j]==string[0])
+            {
+                nr=i,nc=j;
+                goto end;
+            }
+        }
+    }
+    end:
+    ;
+    i=0,j=nr,k=nc;
+    while(1)
+    {
+        while(k<c)
+        {
+            mat[j][k]=string[i];
+            i++;
+            k++;
+            if(i>=strlen(string))
+            goto last;
+        }
+        j++;
+        k=0;
+        if(j==r) 
+        j=0;
+    }
+    last:
+    ;
+    for(i=0;i<r;i++,printf("\n"))
+    for(j=0;j<c;j++)
+    printf("%c ",mat[i][j]);
+}
