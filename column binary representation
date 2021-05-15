@@ -1,0 +1,14 @@
+r,c=map(int,input().split())
+mat=[list(map(int,input().split())) for _ in range(r)]
+bmat=zip(*mat)
+bmat=[list(i) for i in bmat]
+s1,total,s2=0,0,0
+for i in range(c):
+    s1,s2,l=0,0,0
+    for j in range(r):
+        s1+=bmat[i][j]*pow(2,j)
+    for k in range(r-1,-1,-1):
+        s2+=bmat[i][l]*pow(2,k)
+        l+=1
+    total+=max(s1,s2)
+print(total)
