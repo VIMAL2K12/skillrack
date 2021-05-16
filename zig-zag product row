@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int r,c,i,x,y,j;
+    scanf("%d %d",&r,&c);
+    int mat[r][c];
+    for(i=0;i<r;i++)
+    for(j=0;j<c;j++)
+    scanf("%d",&mat[i][j]);
+    scanf("%d %d",&x,&y);
+    for(i=0,j=c-1;i<c&&j>=0;i++,j--)
+    printf("%d ",mat[x-1][i]*mat[y-1][j]);
+}
