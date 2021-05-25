@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define ull unsigned long long int
+
+int execution(int num,int x)
+{
+    int rem,c=0;
+    ull bin=0,i=1;
+    while(num!=0)
+    {
+        rem=num%2;
+        bin+=(rem*i);
+        num/=2;
+        i*=10;
+    }
+    ull binary,dec;
+    while(bin!=0)
+    {
+        dec=0,i=0,binary=bin;
+        while(binary!=0)
+        {
+            rem=binary%10;
+            dec+=(rem*pow(2,i));
+            binary/=10;
+            i++;
+        }
+        if(dec%x==0){
+            c++;
+        }
+        bin/=10;
+    }
+    printf("%d",c);
+}
+
+int main()
+{
+    int n,x,c=0;
+    scanf("%d %d",&n,&x);
+    execution(n,x);
+}
