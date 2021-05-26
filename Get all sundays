@@ -1,0 +1,13 @@
+from datetime import date
+import calendar
+s1=input().strip()
+s2=input().strip()
+l=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+month=l.index(s2)+1
+year=int(input())
+A=calendar.TextCalendar(calendar.SUNDAY)
+for k in A.itermonthdays(year,month):
+    if k!=0:
+        day=date(year,month,k)
+        if day.weekday()==6:
+            print("%02d-%s-%d"%(k,s2,year))
