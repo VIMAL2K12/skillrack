@@ -1,15 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void printPattern(int index,int i,char str[],int indicator)
+void printPattern(int index,int i,char str[])
 {
-    int t;
-    if(indicator==1)
-    {
-        t=index;
-        index=i;
-        i=t;
-    }
     for(;index>=i;index--) printf("%c",str[index]);
 }
 
@@ -21,7 +14,7 @@ int main()
     start=0,end=lenght-1;
     for(i=0;i<lenght;i++,start++,end--,printf("\n"))
     {
-        printPattern(start,0,str,0);
-        printPattern(end,lenght-1,str,1);
+        printPattern(start,0,str);
+        printPattern(lenght-1,end,str);
     }
 }
